@@ -1,0 +1,15 @@
+var prop;
+
+ prop = new java.util.Properties();
+ var fis = new java.io.FileInputStream("/u02/app/alfresco4.2.2/tomcat/shared/classes/alfresco/Snowbound.properties");
+ prop.load(fis);
+ fis.close();
+
+
+var host = prop.getProperty("snowbound.host");
+var port = prop.getProperty("snowbound.port");
+
+var url = "http://"+host+":"+port+"/VirtualViewerJavaHTML5/index.html?" +
+                        "documentId=" + nodeRef + "&amp;" +
+                        "clientInstanceId=" + ticket;
+
